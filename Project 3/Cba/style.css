@@ -1,0 +1,56 @@
+.navbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    width: 100%;
+    color: aliceblue;
+
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(255, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(241, 172, 172);
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body {
+    background-image: url('grace-ashcroft-pistol-re9-4k-wallpaper-uhdpaper.com-40@5@n.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

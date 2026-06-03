@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Lemon&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div>
+                <h2>Tichiera</h2>
+
+                <ul>
+                    <li class="active"><i class="fa-solid fa-house"></i> Dashboard</li>
+                    <li><i class="fa-solid fa-credit-card"></i> Transaction</li>
+                    <li><i class="fa-solid fa-calendar"></i> Event</li>
+                    <li><i class="fa-solid fa-users"></i> Users</li>
+                    <li><i class="fa-solid fa-gear"></i> Settings</li>
+                </ul>
+            </div>
+
+            <div class="user">
+                <p>Halo,</p>
+                <h3>Yuki Admin</h3>
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <div class="topbar">
+                <div class="top-right">
+                    <input type="text" placeholder="Cari Borobudur">
+                    <i class="fa-solid fa-bell icon"></i>
+                    <img src="" alt="Foto evenly">
+                </div>
+            </div>
+
+            <h2>Dashboard</h2>
+
+          
+            <div class="cards">
+                <div class="card green">
+                    <p>Total Keuntungan</p>
+                    <h3>Rp. 12.800.000,00</h3>
+                </div>
+
+                <div class="card beige">
+                    <p>Total Transaksi</p>
+                    <h3>10.800</h3>
+                </div>
+
+                <div class="card pink">
+                    <p>Total Event</p>
+                    <h3>1.320</h3>
+                </div>
+
+                <div class="card purple">
+                    <p>Total Users</p>
+                    <h3>1.240</h3>
+                </div>
+            </div>
+
+            <!-- CHART -->
+            <div class="chart-box">
+                <h3>Activities</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+
+            <!-- BOTTOM -->
+            <div class="bottom">
+
+                <div class="pie-box">
+                    <h3>Top events</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+
+                <div class="users-box">
+                    <h3>New Users</h3>
+
+                    <div class="user-item">
+                        <span class="bar green"></span>
+                        <div>
+                            <p>Surya</p>
+                            <small>surya@email.com</small>
+                        </div>
+                    </div>
+
+                    <div class="user-item">
+                        <span class="bar yellow"></span>
+                        <div>
+                            <p>Ryan</p>
+                            <small>ryan@email.com</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // LINE CHART
+        new Chart(document.getElementById("lineChart"), {
+            type: "line",
+            data: {
+                labels: ["May", "June", "July", "August"],
+                datasets: [
+                    {
+                        data: [100, 900, 400, 1000],
+                        borderColor: "#6aa084",
+                        tension: 0.5,
+                        pointRadius: 4
+                    },
+                    {
+                        data: [900, 100, 500, 150],
+                        borderColor: "#c97b6e",
+                        tension: 0.5,
+                        pointRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: "#eee" } }
+                }
+            }
+        });
+
+        // PIE CHART
+        new Chart(document.getElementById("pieChart"), {
+            type: "pie",
+            data: {
+                labels: ["Esports", "Music", "K-pop"],
+                datasets: [{
+                    data: [42, 45, 13],
+                    backgroundColor: ["#7cc6a5", "#f2d06b", "#e88b7a"]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: "right"
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
